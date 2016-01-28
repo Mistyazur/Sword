@@ -1,120 +1,70 @@
-import os
-import re
-import sys
-import json
-import sqlite3
-import datetime
-import requests
-import configparser
-import time
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-
-import robot
-import qt.hotkey
-
-
-class SocialQuestion(robot.Task):
-
-    def __init__(self):
-        super(SocialQuestion, self).__init__(self.doTasks)
-
-    def __del__(self):
-        print("123")
-
-    def doTasks(self):
-        try:
-            rt = robot.Robot()
-            print(1)
-            for i in range(3):
-                print(".")
-                rt.sleep(1000)
-            print(2)
-        except SystemExit:
-            print(3)
-        finally:
-            print(4)
+from PIL import Image,ImageDraw,ImageFilter
+import random,sys
 
 
 
-# Systray
-class MainWindow(QObject):
+class MyGaussianBlur(ImageFilter.Filter):
+    name = "GaussianBlur"
+    def __init__(self, radius=2, bounds=None):
+        self.radius = radius
+        self.bounds = bounds
+    def filter(self, image):
+        if self.bounds:
+            clips = image.crop(self.bounds).gaussian_blur(self.radius)
+            image.paste(clips, self.bounds)
+            return image
+        else:
+            return image.gaussian_blur(self.radius)
 
-    """
-    :type rt: robot.Task
-    """
+class Binary(ImageFilter.Filter):
 
     def __init__(self):
-        super(MainWindow, self).__init__()
-        self.rt = None
-        self.stoped = True
-        # Add hot key
+        super(Binary, self).__init__()
 
-        self.hkStart = qt.hotkey.Hotkey(QKeySequence("F9"))
-        self.hkStart.sActivate.connect(self.__start)
-        self.hkStop = qt.hotkey.Hotkey(QKeySequence("F10"))
-        self.hkStop.sActivate.connect(self.__stop)
+    def filter(self, image):
+        pixels = image.load()
+        for x in ramge(image.width):
+          for y in range(image.height):
+            pixsels[x, y] = 255 if pixsels[x, y] > 125 else 0
+        return image
 
-        # System tray icon
 
-        self.actGroup = QActionGroup(self)
-        actSocialQuestion = QAction("SocialQuestion", self.actGroup)
-        self.actGroup.setExclusive(True)
-        [x.setCheckable(True) for x in self.actGroup.actions()]
-        menu = QMenu()
-        menu.addActions(self.actGroup.actions())
-        menu.addSeparator()
-        menu.addAction("Quit", QApplication.quit)
-        self.sysTray = QSystemTrayIcon(QIcon("icon\off.png"))
-        self.sysTray.setContextMenu(menu)
-        self.sysTray.show()
+img = Image.open("1.bmp")
 
-        # Set default checked
-        actSocialQuestion.setChecked(True)
+##图像处理##
+#转换为RGB图像
+img = img.convert("RGB")              
 
-        # self.b =  SocialQuestion()
-        # del self.b
+#经过PIL自带filter处理
+imgfilted_b = img.filter(ImageFilter.BLUR)
+imgfilted_c = img.filter(ImageFilter.CONTOUR)
+imgfilted_ee = img.filter(ImageFilter.EDGE_ENHANCE)
+imgfilted_ee_m = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
+imgfilted_em = img.filter(ImageFilter.EMBOSS)                    
+imgfilted_fe = img.filter(ImageFilter.FIND_EDGES)                                                
+imgfilted_sm = img.filter(ImageFilter.SMOOTH)
+imgfilted_sm_m = img.filter(ImageFilter.SMOOTH_MORE)
+imgfilted_sh = img.filter(ImageFilter.SHARPEN)
+imgfilted_d = img.filter(ImageFilter.DETAIL)
 
-    def __start(self):
-        # self.b = SocialQuestion()
-        # print(self.b)
-        if self.stoped and self.actGroup.checkedAction():
-            if self.rt:
-                del self.rt
-            if self.actGroup.checkedAction().text() == "SocialQuestion":
-                self.rt = SocialQuestion()
-            else:
-                return
-            self.sysTray.showMessage(
-                "Start", self.actGroup.checkedAction().text())
-            self.sysTray.setIcon(QIcon("icon\on.png"))
-            [x.setEnabled(False) for x in self.actGroup.actions()]
-            self.rt.start()
-            self.stoped = False
+##组合使用filter
+group_imgfilted = img.filter(ImageFilter.CONTOUR)
+group_imgfilted = group_imgfilted.filter(ImageFilter.SMOOTH_MORE)
 
-    def __stop(self):
-        if not self.stoped and self.actGroup.checkedAction():
-            self.sysTray.showMessage(
-                "Stop", self.actGroup.checkedAction().text())
-            self.sysTray.setIcon(QIcon("icon\off.png"))
-            [x.setEnabled(True) for x in self.actGroup.actions()]
-            self.rt.terminate()
-            self.stoped = True
+##图像保存##
+# imgfilted_b.save("1b.bmp")
+# imgfilted_c.save("1c.bmp")
+imgfilted_ee.save("1ee.bmp")
+imgfilted_ee_m.save("1eem.bmp")
+# imgfilted_em.save("1em.bmp")
+imgfilted_fe.save("1fe.bmp")                                
+# imgfilted_sm.save("1sm.bmp")
+# imgfilted_sm_m.save("1smm.bmp")
+imgfilted_sh.save("1sh.bmp")
+# imgfilted_d.save("1d.bmp")
+group_imgfilted.save("1group.bmp")
 
-def getRemoteTime():
-    r = requests.get("https://www.baidu.com")
-    gmtTimeStr = r.headers["Date"][5:-4]
-    gmt = time.strptime(gmtTimeStr, "%d %b %Y %H:%M:%S")
-    local = time.localtime(time.mktime(gmt)+8*60*60)
-    localTimeStr = "%d-%02d-%02d %02d:%02d:%02d" % (local.tm_year, local.tm_mon, local.tm_mday, local.tm_hour, local.tm_min, local.tm_sec)
-    print(localTimeStr)
 
-if __name__ == "__main__":
-    getRemoteTime()
-    # r = robot.Robot()
-    # if r.reg("FateCynff62bb4a6ec42e04e68567c3e009ec88", "Sword") == 1:
-    #     # # Enter main loop
-    #     a = QApplication(sys.argv)
-    #     mainWindow = MainWindow()
-    #     a.exec()
+group1_imgfilted = img.filter(ImageFilter.FIND_EDGES)
+group1_imgfilted = group1_imgfilted.filter(Binary())
+group1_imgfilted.save("2.bmp")
