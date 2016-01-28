@@ -1,70 +1,70 @@
-from PIL import Image,ImageDraw,ImageFilter
-import random,sys
-
-
-
-class MyGaussianBlur(ImageFilter.Filter):
-    name = "GaussianBlur"
-    def __init__(self, radius=2, bounds=None):
-        self.radius = radius
-        self.bounds = bounds
-    def filter(self, image):
-        if self.bounds:
-            clips = image.crop(self.bounds).gaussian_blur(self.radius)
-            image.paste(clips, self.bounds)
-            return image
-        else:
-            return image.gaussian_blur(self.radius)
-
-class Binary(ImageFilter.Filter):
-
-    def __init__(self):
-        super(Binary, self).__init__()
-
-    def filter(self, image):
-        pixels = image.load()
-        for x in ramge(image.width):
-          for y in range(image.height):
-            pixsels[x, y] = 255 if pixsels[x, y] > 125 else 0
-        return image
-
+from PIL import Image, ImageFilter, ImageWin 
+from ctypes import *
+import robot
 
 img = Image.open("1.bmp")
+img = img.convert("RGB")
 
-##图像处理##
-#转换为RGB图像
-img = img.convert("RGB")              
-
-#经过PIL自带filter处理
+# 经过PIL自带filter处理
 imgfilted_b = img.filter(ImageFilter.BLUR)
 imgfilted_c = img.filter(ImageFilter.CONTOUR)
 imgfilted_ee = img.filter(ImageFilter.EDGE_ENHANCE)
 imgfilted_ee_m = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
-imgfilted_em = img.filter(ImageFilter.EMBOSS)                    
-imgfilted_fe = img.filter(ImageFilter.FIND_EDGES)                                                
+imgfilted_em = img.filter(ImageFilter.EMBOSS)
+imgfilted_fe = img.filter(ImageFilter.FIND_EDGES)
 imgfilted_sm = img.filter(ImageFilter.SMOOTH)
 imgfilted_sm_m = img.filter(ImageFilter.SMOOTH_MORE)
 imgfilted_sh = img.filter(ImageFilter.SHARPEN)
 imgfilted_d = img.filter(ImageFilter.DETAIL)
 
-##组合使用filter
+# 组合使用filter
 group_imgfilted = img.filter(ImageFilter.CONTOUR)
 group_imgfilted = group_imgfilted.filter(ImageFilter.SMOOTH_MORE)
 
-##图像保存##
-# imgfilted_b.save("1b.bmp")
-# imgfilted_c.save("1c.bmp")
-imgfilted_ee.save("1ee.bmp")
-imgfilted_ee_m.save("1eem.bmp")
-# imgfilted_em.save("1em.bmp")
-imgfilted_fe.save("1fe.bmp")                                
-# imgfilted_sm.save("1sm.bmp")
-# imgfilted_sm_m.save("1smm.bmp")
-imgfilted_sh.save("1sh.bmp")
-# imgfilted_d.save("1d.bmp")
-group_imgfilted.save("1group.bmp")
+group1_imgfilted = img.filter(ImageFilter.SHARPEN)
+group1_imgfilted = group1_imgfilted.filter(ImageFilter.FIND_EDGES)
+group1_imgfilted = group1_imgfilted.convert("L")
+table = [0 if x < 175 else 1 for x in range(256)]
+group1_imgfilted.save("11.bmp")
 
+img2 = Image.open("2.bmp")
+img2 = img2.convert("RGB")
+imgf2 = img2.filter(ImageFilter.SHARPEN)
+imgf2 = imgf2.filter(ImageFilter.FIND_EDGES)
 
-group1_imgfilted = img.filter(ImageFilter.FIND_EDGES)
-group1_imgfilted = group1_imgfilted.filter(Binary())
-group1_imgfilted.save("2.bmp")
+imgf2 = imgf2.convert("L")
+table = [0 if x < 175 else 1 for x in range(256)]
+
+#  convert to binary image by the table
+imgf2 = imgf2.point(table, "1")
+imgf2.save("22.bmp")
+
+import datetime
+import time
+if __name__ == "__main__":
+    print(datetime.datetime.now())
+    img2 = Image.open("1.bmp")
+    img2 = img2.convert("RGB")
+    imgf2 = img2.filter(ImageFilter.SHARPEN)
+    imgf2 = imgf2.filter(ImageFilter.FIND_EDGES)
+
+    imgf2 = imgf2.convert("L")
+    table = [0 if x < 175 else 1 for x in range(256)]
+
+    #  convert to binary image by the table
+    imgf2 = imgf2.point(table, "1")
+    print(datetime.datetime.now())
+    imgf2.save("11.bmp")
+    print(datetime.datetime.now())
+    # img2 = Image.open("33.bmp")
+    # print(type(img2.tobytes()))
+    # print(create_string_buffer(11))
+    # # s = create_string_buffer('\000' * 32)
+    # i = c_int(42)
+    # print(i)
+    # pi = pointer(i)
+    # print(pi)
+    # print(byref(i))
+
+    # short_array = (c_ubyte * 4)()
+    # print(short_array)
