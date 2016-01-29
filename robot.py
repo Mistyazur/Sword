@@ -5,9 +5,7 @@ import ctypes
 import requests
 import threading
 import pythoncom
-import win32con
 import win32com.client
-import win32clipboard
 import logging
 import logging.handlers
 
@@ -31,11 +29,29 @@ class Robot(object):
         self.dm = win32com.client.Dispatch('dm.dmsoft')
         pythoncom.CoUninitialize
 
+    ################################################################
+    # Base
+    ################################################################
+
     def reg(self, code, info):
         if self.dm.Ver() == '3.1232':
             return 1
         else:
             return self.dm.Reg(code, info)
+
+    def setPath(self, dirname):
+        path = os.path.join(os.getcwd(), dirname)
+        return self.dm.SetPath(path)
+
+    def setSimMode(self, mode):
+        return self.dm.SetSimMode(mode)
+
+    def setDisplayInput(self, mode):
+        return self.dm.SetDisplayInput(mode)
+
+    ################################################################
+    # System
+    ################################################################
 
     # Log off 0
     # Shut down 1
@@ -64,9 +80,9 @@ class Robot(object):
         localTimeStr = "%d-%02d-%02d %02d:%02d:%02d" % (local.tm_year, local.tm_mon, local.tm_mday, local.tm_hour, local.tm_min, local.tm_sec)
         return localTimeStr
 
-    def setPath(self, dirname):
-        path = os.path.join(os.getcwd(), dirname)
-        return self.dm.SetPath(path)
+    ################################################################
+    # Window
+    ################################################################
 
     def enumWindow(self, parent, title, classname, filterf):
         return self.dm.EnumWindow(parent, title, classname, filterf)
@@ -86,37 +102,72 @@ class Robot(object):
     def getBindWindow(self):
         return self.dm.GetBindWindow()
 
+    def sendString(self, hwnd, sendStr):
+        return self.dm.SendString(hwnd, sendStr)
+
+    ################################################################
+    # Display
+    ################################################################
+
     def isDisplayDead(self, x1, y1, x2, y2, t):
         return self.dm.IsDisplayDead(x1, y1, x2, y2, t)
 
     def capture(self, x1, y1, x2, y2, name):
         return self.dm.Capture(x1, y1, x2, y2, name)
 
-    def setClipboard(self, text):
-        win32clipboard.OpenClipboard()
-        win32clipboard.EmptyClipboard()
-        win32clipboard.SetClipboardData(win32con.CF_TEXT, text)
-        win32clipboard.CloseClipboard()
+    def getScreenBmp(self, x1, y1, x2, y2):
+        return self.dm.GetScreenDataBmp(x1, y1, x2, y2)
 
-    def getClipboard(self):
-        self.keyPress(17, 1)
-        self.keyPress(86)
-        self.keyPress(17, 0)
+    def getColor(self, x, y):
+        return self.dm.GetColor(x, y)
 
-    def getCursorPos(self):
-        return self.dm.GetCursorPos()
+    def findPic(self, x1, y1, x2, y2, picname, deltacolor, sim, direct):
+        return self.dm.FindPic(x1, y1, x2, y2, picname, deltacolor, sim, direct)
 
-    def setSimMode(self, mode):
-        return self.dm.SetSimMode(mode)
+    ################################################################
+    # Ocr
+    ################################################################
+
+    def setDict(self, index, filename):
+        return self.dm.SetDict(index, filename)
+
+    def setMinRowGap(self, gap):
+        return self.dm.SetMinRowGap(gap)
+
+    def ocr(self, x1, y1, x2, y2, colorformat, sim):
+        return self.dm.Ocr(x1, y1, x2, y2, colorformat, sim)
+
+    def getWords(self, x1, y1, x2, y2, colorformat, sim):
+        return self.dm.GetWords(x1, y1, x2, y2, colorformat, sim)
+
+    def getWordCount(self, words):
+        return self.dm.GetWordResultCount(words)
+
+    def getWordPos(self, words, index):
+        return self.dm.GetWordResultPos(words, index)
+
+    def getWordStr(self, words, index):
+        return self.dm.GetWordResultStr(words, index)
+
+    ################################################################
+    # Mouse
+    ################################################################
 
     def setMouseDelay(self, t, d):
         return self.dm.SetMouseDelay(t, d)
 
-    def setKeypadDelay(self, t, d):
-        return self.dm.SetKeypadDelay(t, d)
+    def getCursorPos(self):
+        return self.dm.GetCursorPos()
 
     def mouseMove(self, x, y):
         self.dm.MoveTo(x, y)
+
+    ################################################################
+    # Keypad
+    ################################################################
+
+    def setKeypadDelay(self, t, d):
+        return self.dm.SetKeypadDelay(t, d)
 
     def leftClick(self, x=0, y=0):
         if x != 0 or y != 0:
@@ -149,37 +200,6 @@ class Robot(object):
 
     def getKeyState(self, keycode):
         return self.dm.GetKeyState(keycode)
-
-    def getColor(self, x, y):
-        return self.dm.GetColor(x, y)
-
-    def findPic(self, x1, y1, x2, y2, picname, deltacolor, sim, direct):
-        return self.dm.FindPic(x1, y1, x2, y2, picname, deltacolor, sim, direct)
-
-    def setDict(self, index, filename):
-        return self.dm.SetDict(index, filename)
-
-    def setMinRowGap(self, gap):
-        return self.dm.SetMinRowGap(gap)
-
-    def ocr(self, x1, y1, x2, y2, colorformat, sim):
-        return self.dm.Ocr(x1, y1, x2, y2, colorformat, sim)
-
-    def getWords(self, x1, y1, x2, y2, colorformat, sim):
-        return self.dm.GetWords(x1, y1, x2, y2, colorformat, sim)
-
-    def getWordCount(self, words):
-        return self.dm.GetWordResultCount(words)
-
-    def getWordPos(self, words, index):
-        return self.dm.GetWordResultPos(words, index)
-
-    def getWordStr(self, words, index):
-        return self.dm.GetWordResultStr(words, index)
-
-    def sendString(self, hwnd, sendStr):
-        return self.dm.SendString(hwnd, sendStr)
-
 
 class Log(object):
 
