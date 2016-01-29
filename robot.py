@@ -1,4 +1,5 @@
 import os
+import io
 import time
 import random
 import ctypes
@@ -6,6 +7,7 @@ import requests
 import threading
 import pythoncom
 import win32com.client
+import PIL.Image
 import logging
 import logging.handlers
 
@@ -115,6 +117,24 @@ class Robot(object):
     def capture(self, x1, y1, x2, y2, name):
         return self.dm.Capture(x1, y1, x2, y2, name)
 
+    def captureImage(self, x1, y1, x2, y2):
+        info = self.dm.GetScreenDataBmp(x1, y1, x2, y2)
+        if info[0]:
+            data = ctypes.string_at(info[1], info[2])
+            dataIo = io.BytesIO(data)
+            image = PIL.Image.open(dataIo)
+            return image
+        return None
+
+    def setDisplayInputImage(self, image):
+        dataIo = io.BytesIO()
+        image.save(dataIo, "BMP")
+        data = ctypes.create_string_buffer(dataIo.getvalue())
+        return self.dm.SetDisplayInput("mem:%d,%d" % (ctypes.addressof(data), ctypes.sizeof(data)))
+
+    def resetDisplayInput(self):
+        self.dm.SetDisplayInput("screen")
+
     def getScreenBmp(self, x1, y1, x2, y2):
         return self.dm.GetScreenDataBmp(x1, y1, x2, y2)
 
@@ -200,6 +220,7 @@ class Robot(object):
 
     def getKeyState(self, keycode):
         return self.dm.GetKeyState(keycode)
+
 
 class Log(object):
 
