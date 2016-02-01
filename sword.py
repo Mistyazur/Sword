@@ -408,6 +408,8 @@ class Examination(robot.Task):
 
     def __init__(self):
         super(Examination, self).__init__(self.doTasks)
+        self.archivePath = os.path.join(sys.path[0], "archive")
+        print(self.archivePath)
 
     def doTasks(self):
         rt = robot.Robot()
@@ -423,9 +425,9 @@ class Examination(robot.Task):
             rt = robot.Robot()
             rt.setMouseDelay("dx", 1)
             rt.setKeypadDelay("dx", 1)
-            rt.setPath("res")
-            rt.setDict(0, "question.txt")
-            rt.setMinRowGap(3)
+            rt.setPath("resource\study")
+            # rt.setDict(0, "question.txt")
+            # rt.setMinRowGap(3)
 
             # Sqlite
             conn = sqlite3.connect("sword.db")
@@ -438,114 +440,131 @@ class Examination(robot.Task):
                     hwnd = rt.findWindow("GEMAINWINDOWCLASS", "")
                     if hwnd:
                         logger.log("Bind window: %d" % (hwnd))
-                        rt.bind(hwnd, "dx2", "dx", "dx", 0)
+                        rt.bind(hwnd, "dx2", "normal", "normal", 0)
                         step.next()
                         # step.goto(2)
                     rt.sleep(1000)
                 elif step.current() == 1:
-                    rt.leftClick(725, 475)
-                    step.next()
+                    pic = rt.findPic(0, 0, 1280, 720, "Talk.bmp", "111111", 1.0, 0)
+                    print(pic)
+                    if pic[0] != -1:
+                        rt.leftClick(pic[1] + 20, pic[2] + 10)
+                        step.next()
                 elif step.current() == 2:
-                    if rt.findPic(0, 0, 1280, 720, "QnAStart.bmp", "111111", 1.0, 0)[0] != -1:
+                    if rt.findPic(0, 0, 1280, 720, "Start.bmp", "111111", 1.0, 0)[0] != -1:
                         rt.sleep(100)
-                        rt.leftClick(330, 530)
+                        rt.leftClick(360, 580)
                         step.next()
                 elif step.current() == 3:
-                    done = False
-                    pic = rt.findPic(465, 275, 505, 295, "QnAProgress.bmp", "111111", 1.0, 0)
+                    if not rt.waitKey(84, 1000):
+                        continue
+
+                    rt.sleep(500)
+                    # done = False
+                    pic = rt.findPic(520, 280, 560, 300, "Progress.bmp", "111111", 1.0, 0)
+                    print(pic)
                     if pic[0] != -1:
                         print("xy: %d, %d" % (pic[1], pic[2]))
-                        matchCountIndex = 0
 
-                        # Get question
-                        words = rt.getWords(195, 295, 510, 370, "ffffff-808080", 0.95)
-                        wordCount = rt.getWordCount(words)
-                        if wordCount > 0:
-                            fragments = words.split("|")
-                            del fragments[0:2]
-                            logger.log(fragments)
+                        datetimeStr = datetime.datetime.now().strftime(
+                            "%Y-%m-%d_%H-%M-%S")
+                        bmpQuestion = self.archivePath + "\QnA_" + datetimeStr + "_Q.bmp"
+                        rt.capture(220, 305, 540, 385, bmpQuestion)
+                        bmpQuestion = self.archivePath + "\QnA_" + datetimeStr + "_A.bmp"
+                        rt.capture(220, 400, 540, 530, bmpQuestion)
 
-                            # Search answer from local
-                            finalAnswer = ""
-                            keys = "%"
-                            for key in fragments:
-                                keys += key + "%"
-                            cur.execute("Select question, answer from Questions where question like '{0}'".format(keys))
-                            curRes = cur.fetchall()
-                            if curRes:
-                                minQuestionLen = 999
-                                for r in curRes:
-                                    questionLen = len(re.sub("[_，。！？：；‘’“”《》]", "", r[0]))
-                                    if questionLen < minQuestionLen:
-                                        minQuestionLen = questionLen
-                                        finalAnswer = r[1]
-                                logger.log("Answer: %s" % (finalAnswer))
+                        # Y : 403 D: 35
+                        # matchCountIndex = 0
 
-                                if finalAnswer != "":
-                                    matchCountList = []
-                                    for i in range(4):
-                                        words = rt.getWords(218, 378 + i * 30, 480, 395 + i * 30, "ffffff-8599A5", 0.95)
-                                        fragments = words.split("|")
-                                        del fragments[0:2]
-                                        logger.log(fragments)
+                        # # Get question
+                        # words = rt.getWords(220, 305, 540, 385, "ffffff-808080", 0.95)
+                        # wordCount = rt.getWordCount(words)
+                        # if wordCount > 0:
+                        #     fragments = words.split("|")
+                        #     del fragments[0:2]
+                        #     logger.log(fragments)
 
-                                        matchCount = 0
-                                        for fragment in fragments:
-                                            if finalAnswer.find(fragment) != -1:
-                                                matchCount += 1
-                                            else:
-                                                matchCount = -1
-                                                break
-                                        matchCountList.append(matchCount)
+                        #     # Search answer from local
+                        #     finalAnswer = ""
+                        #     keys = "%"
+                        #     for key in fragments:
+                        #         keys += key + "%"
+                        #     cur.execute("Select question, answer from Questions where question like '{0}'".format(keys))
+                        #     curRes = cur.fetchall()
+                        #     if curRes:
+                        #         minQuestionLen = 999
+                        #         for r in curRes:
+                        #             questionLen = len(re.sub("[_，。！？：；‘’“”《》]", "", r[0]))
+                        #             if questionLen < minQuestionLen:
+                        #                 minQuestionLen = questionLen
+                        #                 finalAnswer = r[1]
+                        #         logger.log("Answer: %s" % (finalAnswer))
 
-                                maxMatchCount = max(matchCountList)
-                                if matchCountList.count(maxMatchCount) == 1:
-                                    matchCountIndex = matchCountList.index(maxMatchCount)
+                        #         if finalAnswer != "":
+                        #             matchCountList = []
+                        #             for i in range(4):
+                        #                 words = rt.getWords(218, 378 + i * 30, 480, 395 + i * 30, "ffffff-8599A5", 0.95)
+                        #                 fragments = words.split("|")
+                        #                 del fragments[0:2]
+                        #                 logger.log(fragments)
 
-                                    # Selcet answer
-                                    print("I: %d" % (matchCountIndex))
-                                    rt.leftClick(350, 385 + matchCountIndex * 30)
-                                    done = True
+                        #                 matchCount = 0
+                        #                 for fragment in fragments:
+                        #                     if finalAnswer.find(fragment) != -1:
+                        #                         matchCount += 1
+                        #                     else:
+                        #                         matchCount = -1
+                        #                         break
+                        #                 matchCountList.append(matchCount)
 
-                        if not done:
-                            # Can't select an answer then save the question
-                            datetimeStr = datetime.datetime.now().strftime(
-                                "%Y-%m-%d_%H-%M-%S")
-                            bmpQuestion = "QnA_" + datetimeStr + "_Q.bmp"
-                            rt.capture(195, 295, 510, 370, bmpQuestion)
-                            bmpQuestion = "QnA_" + datetimeStr + "_A.bmp"
-                            rt.capture(218, 378, 480, 485, bmpQuestion)
+                        #         maxMatchCount = max(matchCountList)
+                        #         if matchCountList.count(maxMatchCount) == 1:
+                        #             matchCountIndex = matchCountList.index(maxMatchCount)
 
-                            rt.sleep(100)
+                        #             # Selcet answer
+                        #             print("I: %d" % (matchCountIndex))
+                        #             rt.leftClick(350, 385 + matchCountIndex * 30)
+                        #             done = True
 
-                            # No answer then avoid
-                            logger.log("Unknown")
-                            words = rt.getWords(218, 498, 480, 515, "ffffff-8599A5", 0.95)
-                            wordCount = rt.getWordCount(words)
-                            if wordCount > 0:
-                                avoidAnswerStr = words.split("|")[2]
-                                if avoidAnswerStr.find("本题") != -1:
-                                    logger.log("Avoid")
-                                    rt.leftClick(350, 505)
-                                    done = True
+                        # if not done:
+                        #     # Can't select an answer then save the question
+                            # datetimeStr = datetime.datetime.now().strftime(
+                            #     "%Y-%m-%d_%H-%M-%S")
+                            # bmpQuestion = "QnA_" + datetimeStr + "_Q.bmp"
+                            # rt.capture(195, 295, 510, 370, bmpQuestion)
+                            # bmpQuestion = "QnA_" + datetimeStr + "_A.bmp"
+                            # rt.capture(218, 378, 480, 485, bmpQuestion)
 
-                        if not done:
-                            # No avoid chance then select a random answer
-                            logger.log("Random")
-                            rt.leftClick(350, 385 + matchCountIndex * 30)
+                        #     rt.sleep(100)
 
-                        # Waiting for changing
-                        rt.isDisplayDead(470, 275, 520, 295, 5000)
+                        #     # No answer then avoid
+                        #     logger.log("Unknown")
+                        #     words = rt.getWords(218, 498, 480, 515, "ffffff-8599A5", 0.95)
+                        #     wordCount = rt.getWordCount(words)
+                        #     if wordCount > 0:
+                        #         avoidAnswerStr = words.split("|")[2]
+                        #         if avoidAnswerStr.find("本题") != -1:
+                        #             logger.log("Avoid")
+                        #             rt.leftClick(350, 505)
+                        #             done = True
 
-                        # Reset mouse postion
-                        rt.mouseMove(5, 5)
-                        rt.sleep(10000)
+                        # if not done:
+                        #     # No avoid chance then select a random answer
+                        #     logger.log("Random")
+                        #     rt.leftClick(350, 385 + matchCountIndex * 30)
 
-                        if pic[1] == 471:
-                            # This is the final quesstion
-                            print("Esc")
-                            rt.keyPress(27)
-                            step.nextStep()
+                        # # Waiting for changing
+                        # rt.isDisplayDead(470, 275, 520, 295, 5000)
+
+                        # # Reset mouse postion
+                        # rt.mouseMove(5, 5)
+                        # rt.sleep(10000)
+
+                        # if pic[1] == 471:
+                        #     # This is the final quesstion
+                        #     print("Esc")
+                        #     rt.keyPress(27)
+                        #     step.nextStep()
                 elif step.current() == 4:
                     rt.sleep(1000)
 
@@ -595,70 +614,6 @@ class Drink(robot.Task):
                     rt.sleep(200)
         finally:
             rt.unbind()
-
-
-# Systray
-class MainWindow(QObject):
-
-    """
-    :type task: robot.Task
-    """
-
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        self.task = None
-
-        # Add hot key
-
-        self.hkStart = qt.hotkey.Hotkey(QKeySequence("F9"))
-        self.hkStart.sActivate.connect(self.__start)
-        self.hkStop = qt.hotkey.Hotkey(QKeySequence("F10"))
-        self.hkStop.sActivate.connect(self.__stop)
-
-        # System tray icon
-
-        self.actGroup = QActionGroup(self)
-        actUnifiedExamination = QAction("UnifiedExamination", self.actGroup)
-        actPaint = QAction("Paint", self.actGroup)
-        actDrink = QAction("Drink", self.actGroup)
-        self.actGroup.setExclusive(True)
-        [x.setCheckable(True) for x in self.actGroup.actions()]
-        menu = QMenu()
-        menu.addActions(self.actGroup.actions())
-        menu.addSeparator()
-        menu.addAction("Quit", QApplication.quit)
-        self.sysTray = QSystemTrayIcon(QIcon("icon\off.png"))
-        self.sysTray.setContextMenu(menu)
-        self.sysTray.show()
-
-        # Set default checked
-        actUnifiedExamination.setChecked(True)
-
-    def __start(self):
-        if self.task is None and self.actGroup.checkedAction():
-            if self.actGroup.checkedAction().text() == "UnifiedExamination":
-                self.task = UnifiedExamination()
-            elif self.actGroup.checkedAction().text() == "Paint":
-                self.task = UnifiedExamination()
-            elif self.actGroup.checkedAction().text() == "Drink":
-                self.task = UnifiedExamination()
-            else:
-                return
-            self.sysTray.showMessage(
-                "Start", self.actGroup.checkedAction().text())
-            self.sysTray.setIcon(QIcon("icon\on.png"))
-            [x.setEnabled(False) for x in self.actGroup.actions()]
-            self.task.start()
-
-    def __stop(self):
-        if self.task and self.actGroup.checkedAction():
-            self.sysTray.showMessage(
-                "Stop", self.actGroup.checkedAction().text())
-            self.sysTray.setIcon(QIcon("icon\off.png"))
-            [x.setEnabled(True) for x in self.actGroup.actions()]
-            self.task.terminate()
-            del self.task
-            self.task = None
 
 
 class Widget(QWidget):
@@ -726,13 +681,6 @@ class Widget(QWidget):
 
 
 if __name__ == "__main__":
-    # # regist first
-    # r = robot.Robot()
-    # if r.reg("FateCynff62bb4a6ec42e04e68567c3e009ec88", "Sword") == 1:
-    #     # Enter main loop
-    #     a = QApplication(sys.argv)
-    #     mainWindow = MainWindow()
-    #     a.exec()
     a = QApplication(sys.argv)
     w = Widget()
     w.show()

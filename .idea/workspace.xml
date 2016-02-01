@@ -2,171 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5315ccde-48db-40f0-be10-4e0b8a8d5350" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/0eh_1.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/0eh_2015-12-11_18-34-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/0eh_2015-12-16_22-08-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/1.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/2015-12-11_18-34-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/21/2015-12-16_22-08-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/1.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-06_20-41-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-06_21-41-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-09_00-17-55.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-09_14-22-54.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-09_18-00-53.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-09_18-32-54.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-10_14-00-54.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-10_18-02-54.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-10_22-02-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-11_01-55-53.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-11_14-16-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-11_18-04-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-11_18-34-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-11_22-04-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-12_02-21-57.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-12_12-02-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-12_18-08-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-12_18-38-55.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-12_22-06-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_00-08-01.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_08-06-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_12-12-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_15-14-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_18-08-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_18-42-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-13_22-08-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_06-53-53.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_08-08-53.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_12-01-29.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_14-22-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_18-02-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_18-36-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-14_22-22-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-15_02-23-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-15_14-03-04.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-15_18-03-03.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-15_18-40-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-15_22-00-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_01-57-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_10-16-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_12-06-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_14-20-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_18-00-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_18-32-49.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-16_22-08-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_01-01-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_12-07-28.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_14-11-18.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_18-02-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_18-34-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-17_22-02-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_03-31-59.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_12-06-47.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_14-30-47.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_18-00-47.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_18-36-47.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-18_22-14-48.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-19_00-59-48.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-19_18-06-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-19_18-42-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-19_22-20-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-20_12-22-45.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-20_14-14-45.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-20_18-08-50.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-20_18-38-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-20_22-41-23.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-21_12-18-57.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-21_14-38-58.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-21_18-02-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-21_18-34-46.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-22_12-06-55.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-22_18-06-49.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-22_18-42-44.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-23_12-06-54.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-23_14-06-53.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-23_18-08-44.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-23_18-48-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-23_22-20-45.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-24_12-02-52.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-24_18-06-43.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-24_22-22-44.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-25_12-18-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-25_18-38-42.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-25_22-06-42.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-26_12-16-48.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-26_14-14-48.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-26_18-06-41.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-26_18-36-40.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-26_22-32-42.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-27_18-14-41.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-27_18-44-41.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-27_22-30-41.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-28_14-04-44.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-28_18-02-40.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-28_18-32-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-29_18-02-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-29_18-42-38.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-29_22-22-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-30_12-08-41.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-30_14-28-40.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-30_18-00-38.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-30_18-32-37.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-31_12-00-40.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-31_14-20-39.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2015-12-31_18-04-37.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-02_12-48-36.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-02_14-14-36.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-02_18-06-36.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-03_15-08-35.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-03_18-02-36.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-03_18-38-36.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-04_12-12-32.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-04_14-00-32.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-04_18-10-34.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-04_18-46-34.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-05_14-36-34.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-05_18-36-33.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-06_18-12-33.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-06_18-44-33.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-06_22-14-34.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-07_12-00-26.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-07_14-04-26.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-07_18-10-32.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-07_18-52-32.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-07_22-02-32.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-08_12-02-25.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-08_14-00-25.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-08_22-02-31.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-09_12-02-23.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-09_14-38-23.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-09_18-08-29.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-09_18-40-29.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-10_18-44-30.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-11_14-02-19.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-11_18-00-28.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-12_12-00-17.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-12_18-00-27.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-12_18-34-27.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-13_12-10-15.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-13_14-34-14.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-13_18-02-25.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-13_18-34-25.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-16_18-42-24.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-18_14-14-07.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-21_18-48-02.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-21_22-20-02.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-24_18-46-16.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-25_18-36-15.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-25_22-04-15.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-26_01-13-15.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/binary/2016-01-26_18-25-51.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/enhance/0eh_1.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/enhance/0eh_2.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mask.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sample/1.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/test.bmp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/41/0eh_2.bmp" afterPath="$PROJECT_DIR$/41/0eh_2.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/41/0eh_2015-12-10_22-02-59.bmp" afterPath="$PROJECT_DIR$/41/0eh_2015-12-10_22-02-59.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/41/0eh_3.bmp" afterPath="$PROJECT_DIR$/41/0eh_3.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/41/0eh_4.bmp" afterPath="$PROJECT_DIR$/41/0eh_4.bmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/41/0eh_QnA_2016-01-27_16-37-57_A.bmp" afterPath="$PROJECT_DIR$/41/0eh_QnA_2016-01-27_16-37-57_A.bmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sortdata.py" afterPath="$PROJECT_DIR$/sortdata.py" />
@@ -202,20 +41,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sortdata.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sortdata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sortdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68421054">
-              <caret line="118" column="48" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sword.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sword.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sword.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.8888889">
               <caret line="171" column="20" selection-start-line="171" selection-start-column="15" selection-end-line="171" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -246,10 +87,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -506,15 +347,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18086225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33437827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33369213" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -560,7 +401,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="20" selection-start-line="171" selection-start-column="15" selection-end-line="171" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sortdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -588,7 +461,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +491,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -651,7 +528,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="52" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -686,7 +565,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -714,7 +595,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -745,21 +628,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sword.py">
+    <entry file="file://$PROJECT_DIR$/sortdata.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="20" selection-start-line="171" selection-start-column="15" selection-end-line="171" selection-end-column="20" />
+          <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sortdata.py">
+    <entry file="file://$PROJECT_DIR$/sword.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68421054">
-          <caret line="118" column="48" selection-start-line="118" selection-start-column="48" selection-end-line="118" selection-end-column="48" />
-          <folding />
+        <state vertical-scroll-proportion="-0.8888889">
+          <caret line="171" column="20" selection-start-line="171" selection-start-column="15" selection-end-line="171" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
