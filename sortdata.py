@@ -2,6 +2,7 @@ import os
 
 from PIL import Image, ImageFilter, ImageEnhance, ImageDraw, ImageFont, ImageChops
 import colorsys
+import datetime
 
 def SortWordText():
     with open("Question.txt", "r") as rf, open("Q.txt", "w") as wf:
@@ -56,15 +57,23 @@ def clearNoise(img):
 
 
 def optimize(img):
-    draw = ImageDraw.Draw(img)
+    # precount = 0
+    # for i in range(100):
+    #     count = 0
+
     for x in range(1, img.size[0] - 1):
         for y in range(1, img.size[1] - 1):
             rgb = img.getpixel((x, y))
             h, s, v = colorsys.rgb_to_hsv(rgb[0]/255.0, rgb[1]/255.0, rgb[2]/255.0)
-            s = int(s * 100)
-            v = int(v * 100)
-            if v - s < 45:
-                draw.point((x, y), "#000000")
+            s = int(round(s * 100))
+            v = int(round(v * 100))
+            # if v - s > i:
+            #     count += 1
+
+            if v - s >= 55:
+                img.putpixel((x, y), (255, 255, 255))
+        # print((i, count, count - precount))
+        # precount = count
 
 
 def SortPic():
@@ -87,20 +96,33 @@ def SortPic():
                     # img = enhancer.enhance(theshord)
                     # # img.save(os.path.join(".\\enhance", name.split(".")[0] + "_eh{0}".format(i) + ".bmp"))
                     # img.save(os.path.join(".\\enhance", "0eh_" + name))
-
                     # img = img.convert("L")
                     # clearNoise(img, int(path[2:]))
                     # img = ImageChops.invert(img)
                     # img = ImageChops.invert(img)
                     # img = ImageChops.multiply(img, img)
                     # enhancer = ImageEnhance.Contrast(img)
+                    # img = enhancer.enhance(0.75)
+                    # enhancer = ImageEnhance.Sharpness(img)
                     # img = enhancer.enhance(1)
 
                     # mask = Image.open("mask.bmp")
                     # mask = mask.resize((img.size[0], img.size[1]))
                     # img = ImageChops.lighter(img, mask)
 
-                    optimize(img)
+
+
+                    # print(datetime.datetime.now())
+                    # optimize(img)
+                    img = img.filter(ImageFilter.FIND_EDGES)
+                    img = ImageChops.invert(img)
+                    img = ImageChops.invert(img)
+                    # img = img.convert("1")
+                    # img = img.filter(ImageFilter.SHARPEN)
+
+                    # enhancer = ImageEnhance.Contrast(img)
+                    # img = enhancer.enhance(2)
+                    # img = img.convert("RGB")
                     img.save(os.path.join(path, "0eh_" + name))
 
 
