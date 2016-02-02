@@ -87,27 +87,44 @@ def SortPic():
                     img = img.convert("RGB")
 
                     # # Method 1
-                    img = img.convert("L")
-                    enhancer = ImageEnhance.Contrast(img)
-                    img = enhancer.enhance(0.75)
-                    img = img.filter(ImageFilter.FIND_EDGES)
-                    img = ImageChops.invert(img)
-                    img = ImageOps.posterize(img, 1)
+                    # img = img.filter(ImageFilter.FIND_EDGES)
+                    # img = img.convert("L")
+                    # img = ImageChops.invert(img)
+                    # enhancer = ImageEnhance.Contrast(img)
+                    # img = enhancer.enhance(0.75)
+                    # img = ImageOps.posterize(img, 1)
 
                     # Method 2
                     # img = img.convert("L")
                     # img = ImageChops.invert(img)
                     # enhancer = ImageEnhance.Contrast(img)
                     # img = enhancer.enhance(0.75)
-                    # # enhancer = ImageEnhance.Sharpness(img)
-                    # # img = enhancer.enhance(2)
+                    # enhancer = ImageEnhance.Sharpness(img)
+                    # img = enhancer.enhance(2)
                     # img = ImageOps.posterize(img, 1)
+
+                    # Method 3
+                    img = img.convert("L")
+                    img = img.filter(ImageFilter.FIND_EDGES)
+                    img = ImageOps.posterize(img, 1)
 
                     # Save
                     img.save(os.path.join(path, "0eh_" + name))
+
+def SortPic2():
+    for c in range(1, 10):
+        img = Image.open("test\\%d.bmp" % c)
+
+        for i in range(1, 9):
+            img2 = img.convert("L")
+            img2 = img2.filter(ImageFilter.FIND_EDGES)
+            img2 = ImageOps.posterize(img2, 1)
+
+            # Save
+            img2.save("test\\%dlp%d.bmp" % (c, i))
 
 
 if __name__ == "__main__":
     # SortData()
     SortPic()
-
+    SortPic2()
