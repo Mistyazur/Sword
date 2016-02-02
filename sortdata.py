@@ -77,54 +77,65 @@ def optimize(img):
 
 
 def SortPic():
-    paths = [".\\21", ".\\41", ".\\100PW"]
+    paths = [".\\sample"]
     for path in paths:
         for root, dirs, files in os.walk(path):
             for name in files:
-                if name.find("eh") == -1:
+                if name.find("000_") == -1:
                     print(os.path.join(root, name))
                     img = Image.open(os.path.join(root, name))
-                    img = img.convert("RGB")
 
-                    # # Method 1
-                    # img = img.filter(ImageFilter.FIND_EDGES)
+                    img = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
+                    img = ImageOps.posterize(img, 1)    # Wrong
                     # img = img.convert("L")
-                    # img = ImageChops.invert(img)
-                    # enhancer = ImageEnhance.Contrast(img)
-                    # img = enhancer.enhance(0.75)
-                    # img = ImageOps.posterize(img, 1)
 
-                    # Method 2
-                    # img = img.convert("L")
-                    # img = ImageChops.invert(img)
-                    # enhancer = ImageEnhance.Contrast(img)
-                    # img = enhancer.enhance(0.75)
-                    # enhancer = ImageEnhance.Sharpness(img)
-                    # img = enhancer.enhance(2)
-                    # img = ImageOps.posterize(img, 1)
-
-                    # Method 3
-                    img = img.convert("L")
-                    img = img.filter(ImageFilter.FIND_EDGES)
-                    img = ImageOps.posterize(img, 1)
 
                     # Save
-                    img.save(os.path.join(path, "0eh_" + name))
+                    img.save(os.path.join(path, "000_" + name))
+
+
 
 def SortPic2():
     for c in range(1, 10):
-        img = Image.open("test\\%d.bmp" % c)
+        img = Image.open("test\\s%d.bmp" % c)
 
-        for i in range(1, 9):
-            img2 = img.convert("L")
-            img2 = img2.filter(ImageFilter.FIND_EDGES)
-            img2 = ImageOps.posterize(img2, 1)
 
-            # Save
-            img2.save("test\\%dlp%d.bmp" % (c, i))
+        # img2 = img.convert("L")
+        # img2 = img2.point([int(round(x*0.5)) for x in range(256)], "L")
+        # img2 = img2.point([x if x > 0x2F else 0 for x in range(256)], "L")
+        # img2 = ImageOps.posterize(img2, i)
+        # img2 = ImageOps.posterize(img2, i)
+        # img2 = ImageOps.invert(img2)
+
+        # img2 = img.convert("L")
+        # img2 = img2.filter(ImageFilter.FIND_EDGES)
+        # img2 = ImageOps.posterize(img2, 1)
+
+        # img2 = img.convert("L")
+        # img2 = img2.convert("P", dither=Image.NONE, palette=Image.ADAPTIVE, colors=8)
+        # img2 = img2.convert("1")
+
+        # img2 = img.convert("L")
+        # img2 = ImageOps.posterize(img2, 3)
+        # img2 = img2.filter(ImageFilter.FIND_EDGES)
+
+        # img2 = img.convert("L")
+        # img2 = img2.point([x if x > 0x2F else 0 for x in range(256)], "L")
+        # img2 = img2.filter(ImageFilter.FIND_EDGES)
+        # img2 = ImageOps.posterize(img2, 1)
+
+
+        # img = img.convert("L")
+        img = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
+        img = ImageOps.posterize(img, 1)
+        img = img.convert("L")
+        img = ImageOps.posterize(img, 1)
+
+        # Save
+        img.save("test\\0%d.bmp" % (c))
 
 
 if __name__ == "__main__":
     # SortData()
     SortPic()
-    SortPic2()
+    # SortPic2()
