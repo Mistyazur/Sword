@@ -85,8 +85,14 @@ def SortPic():
                     print(os.path.join(root, name))
                     img = Image.open(os.path.join(root, name))
 
-                    img = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
-                    img = ImageOps.posterize(img, 1)    # Wrong
+                    # Test 1: Fail at 000_2015-12-09_14-22-54
+                    # img = ImageOps.posterize(img, 1)
+
+                    # Test 2:
+                    img = img.convert("L")
+                    img = ImageOps.posterize(img, 1)
+                    # img = img.filter(ImageFilter.FIND_EDGES)
+                    
                     # img = img.convert("L")
 
 
@@ -125,11 +131,37 @@ def SortPic2():
         # img2 = ImageOps.posterize(img2, 1)
 
 
+        
         # img = img.convert("L")
-        img = img.filter(ImageFilter.EDGE_ENHANCE_MORE)
-        img = ImageOps.posterize(img, 1)
-        img = img.convert("L")
-        img = ImageOps.posterize(img, 1)
+        # img = img.point([x if x > 0x2F else 0 for x in range(256)], "L")
+        # ie = ImageEnhance.Sharpness(img)
+        # img = ie.enhance(4)
+        # ie = ImageEnhance.Contrast(img)
+        # img = ie.enhance(0.5)
+
+        # img = ImageOps.posterize(img, 1)
+
+        # img = img.filter(ImageFilter.FIND_EDGES)
+        # img = ImageOps.posterize(img, 1)
+
+
+        source = img.split()
+        R, G, B = 0, 1, 2
+
+        # select regions where red is less than 100
+        mask = source[G].point(lambda i: i > 150)
+
+        # paste the processed band back, but only where red was < 100
+        source[R].paste(source[R], None, mask)
+
+        # select regions where red is less than 100
+        mask = source[B].point(lambda i: i > 150)
+
+        # paste the processed band back, but only where red was < 100
+        source[R].paste(source[R], None, mask)
+
+        # build a new multiband image
+        img = Image.merge(img.mode, source)
 
         # Save
         img.save("test\\0%d.bmp" % (c))
@@ -137,5 +169,5 @@ def SortPic2():
 
 if __name__ == "__main__":
     # SortData()
-    SortPic()
-    # SortPic2()
+    # SortPic()
+    SortPic2()
